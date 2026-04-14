@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Price Manager - Route 66</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">ROUTE 66</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="priceManager.html" class="active">Price Manager</a>
+            <a href="history.html">History</a>
+        </div>
+        <button class="logout-btn" onclick="location.href='login.html'">Logout</button>
+    </nav>
+
+    <div class="container" style="text-align: left;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <h1>Price Manager</h1>
+            <button class="btn-add" onclick="openModal()">+ Add Entry</button>
+        </div>
+        
+        <div class="card" style="max-width: 100%;">
+            <div class="controls">
+                <input type="text" placeholder="Search gas name, type or brand..." style="flex-grow: 1;">
+                <select><option>Any Type</option></select>
+                <select><option>Any Brand</option></select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Fuel Type</th>
+                        <th>Price Listed</th>
+                        <th></th>
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FuelSave</td>
+                        <td style="color: var(--crimson);">Gasoline</td>
+                        <td>₱107.50</td>
+                        <td><img src="media/icon_edit.png" alt="Edit" style="width: 30px;"></td>
+                        <td>2/21/2026</td>
+                    </tr>
+                    <tr>
+                        <td>FuelSave</td>
+                        <td style="color: var(--crimson);">Diesel</td>
+                        <td><input type="text" value="126.65" style="width: 60px;"></td>
+                        <td><img src="media/icon_yes.png" alt="Yes" style="width: 25px;">&emsp;&emsp;<img src="media/icon_no.png" alt="No" style="width: 25px;"></td>
+                        <td>2/21/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>© 2026 Route 66.</footer>
+
+    <div id="fuelModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Add Entry</h2>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <form id="addFuelForm">
+            <div class="form-group">
+                <label>Brand</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Fuel Type</label>
+                <select required>
+                    <option value="" disabled selected></option>
+                    <option value="Gasoline">Gasoline</option>
+                    <option value="Diesel">Diesel</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Price (₱)</label>
+                <input type="number" step="0.01" placeholder="00.00" required>
+            </div><br>
+            <div style="display: flex; gap: 10px; margin-top: 20px; justify-content: center;">
+                <button type="submit" class="btn-add" style="flex: 0.5;">Confirm</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("fuelModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("fuelModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById("fuelModal");
+            if (event.target == modal)  closeModal();
+        }
+    </script>
+</div>
+</body>
+</html>

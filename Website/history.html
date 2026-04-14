@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>History - Route 66</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">ROUTE 66</div>
+        <div class="nav-links">
+            <a href="dashboard.html" >Dashboard</a>
+            <a href="priceManager.html">Price Manager</a>
+            <a href="history.html" class="active">History</a>
+        </div>
+        <button class="logout-btn" onclick="location.href='login.html'">Logout</button>
+    </nav>
+
+    <div class="container" style="text-align: left;">
+        <h1>History</h1>
+        <div class="card" style="max-width: 100%;">
+            <div class="controls">
+                <input type="text" placeholder="Search gas name, type or brand..." style="flex-grow: 1;">
+                <select><option>Any Type</option></select>
+                <select><option>Any Brand</option></select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Fuel Type</th>
+                        <th>Price Listed</th>
+                        <th>Action</th>
+                        <th>Action done on</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>FuelSave</td>
+                        <td style="color: var(--crimson);">Gasoline</td>
+                        <td>₱107.50</td>
+                        <td>Added</td>
+                        <td>2/21/2026</td>
+                    </tr>
+                    <tr>
+                        <td>VPower</td>
+                        <td style="color: var(--crimson);">Gasoline</td>
+                        <td>₱113.20</td>
+                        <td>Edited</td>
+                        <td>2/21/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>© 2026 Route 66.</footer>
+</body>
+</html>
